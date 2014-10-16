@@ -1,0 +1,26 @@
+//= require_tree .
+//= require_self
+
+@import "bootstrap-sprockets"
+@import "bootstrap"
+
+$footer-height: 60px
+$footer-bg-color: #f5f5f5
+
+html
+  overflow-y: -moz-scrollbars-vertical
+  overflow-y: scroll
+
+html, body
+  height: 100%
+
+#wrap
+  min-height: 100%
+  height: auto
+  margin: 0 auto (- $footer-height)
+  padding: 60px 0 $footer-height
+
+footer
+  height: $footer-height
+  background-color: $footer-bg-color
+  padding-top: 20px

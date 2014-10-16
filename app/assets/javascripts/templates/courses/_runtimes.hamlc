@@ -1,0 +1,17 @@
+- for year, durations of @courses.years
+  .col-md-2
+    %h3= year
+
+    %table.table.table-striped.table-condensed
+      %thead
+        %tr
+          %th Duration
+          %th Courses
+      %tbody
+
+      - for duration, count of durations
+        %tr
+          %td
+            #{duration} weeks
+          %td
+            #{count}

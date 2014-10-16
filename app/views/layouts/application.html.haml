@@ -1,0 +1,31 @@
+!!!
+%html
+  %head
+    %title MOOC Dashboard
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+
+  %body
+    %nav.navbar.navbar-default.navbar-fixed-top{role:"navigation"}
+      .container
+        .navbar-header
+          %a.navbar-brand MOOC Dashboard
+        .collapse.navbar-collapse
+          %ul.nav.navbar-nav
+            %li.nav-link.active
+              %a{ href:"#runtimes"} Courses' Runtimes
+            %li.nav-link
+              %a{ href:"#starting-soon"} Starting Soon
+            %li.nav-link
+              %a{ href:"#finishing-soon"} Finishing Soon
+    #wrap
+      .container
+        = yield
+
+    %footer
+      .container
+        .row
+          .text-muted.col-md-12
+            Code on
+            %a{ href: 'https://github.com/paulgoetze/mooc-dahboard' } Github

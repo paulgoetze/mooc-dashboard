@@ -1,0 +1,11 @@
+- for course in @courses
+  .course.col-md-2
+    %span
+      %a{href: course.link, target: '_blank'}
+        %image{src: course.icon}
+    %h4=course.name
+    %p Ends on #{course.endDate}
+      %br
+      %b
+        in #{course.endsIn} days
+    %p Duration: #{course.duration}
