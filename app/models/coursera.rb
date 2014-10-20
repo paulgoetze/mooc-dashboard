@@ -13,8 +13,6 @@ class Coursera
       courses = get_json('courses', fields: [:smallIcon])
       course_elements = courses['elements']
 
-      #return course_elements
-
       sessions['elements'] = sessions['elements'].map do |session|
         duration = session['durationString'].split.first.to_i
         date = [session['startDay'], session['startMonth'], session['startYear']]

@@ -1,4 +1,4 @@
-class window.CoursesView
+class window.Courses
 
   constructor: (data) ->
     @data = data

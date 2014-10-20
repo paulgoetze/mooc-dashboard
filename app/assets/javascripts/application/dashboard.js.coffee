@@ -5,18 +5,7 @@ class Dashboard
   FINIHSINFSOON = '#finishing-soon'
 
   constructor: ->
-    @startingSoonContainer = $(STARTINGSOON)
-    @finishingSoonContainer = $(FINIHSINFSOON)
-    @runtimesContainer = $(RUNTIMES)
-
-    @views = {
-      startingSoon:   @startingSoonContainer,
-      finishingSoon:  @finishingSoonContainer,
-      runtimes:       @runtimesContainer
-    }
-
     @registerNavigationEvents()
-
     @dataLoader = new DataLoader
     showInProgress()
     @dataLoader.load(@storeData)
@@ -43,7 +32,7 @@ class Dashboard
 
   storeData: (data) =>
     @data = data.elements
-    @courses = new CoursesView(@data)
+    @courses = new Courses(@data)
     hideInProgress()
     @showContent(RUNTIMES)
     return
