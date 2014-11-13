@@ -20,7 +20,7 @@ class window.Courses
       continue if isNaN(startDate.getDate())
 
       currentDate = $.now()
-      diffDays = parseInt((startDate - currentDate )  / (1000 * 60 * 60 * 24))
+      diffDays = Math.ceil((startDate - currentDate )  / (1000 * 60 * 60 * 24))
 
       if diffDays > 0  && diffDays < 60 # starting in next 2 months => TODO make selectable by user!
         course.startDate = startDate.getDate() + "/" + (startDate.getMonth() + 1) + "/" + startDate.getFullYear()
@@ -47,7 +47,7 @@ class window.Courses
       continue if isNaN(endDate.getDate())
 
       currentDate = $.now()
-      diffDays = parseInt((endDate - currentDate )  / (1000 * 60 * 60 * 24))
+      diffDays = Math.ceil((endDate - currentDate )  / (1000 * 60 * 60 * 24))
 
       if diffDays > 0
         course.endDate = endDate.getDate() + "/" + (endDate.getMonth() + 1) + "/" + endDate.getFullYear()
