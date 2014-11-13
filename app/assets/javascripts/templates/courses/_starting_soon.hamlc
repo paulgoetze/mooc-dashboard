@@ -7,7 +7,8 @@
     %p Starts on #{course.startDate}
       %br
       %b
-        in #{course.startsIn} days
+        - startsIn = (if course.startsIn == 1 then "tomorrow" else "in #{course.startsIn} days")
+        = startsIn
     %p Duration: #{course.duration}
 
 

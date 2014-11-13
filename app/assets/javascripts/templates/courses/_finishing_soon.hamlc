@@ -7,5 +7,7 @@
     %p Ends on #{course.endDate}
       %br
       %b
-        in #{course.endsIn} days
+        - endsIn = (if course.endsIn == 1 then "tomorrow" else "in #{course.endsIn} days")
+        - console.log(course.endsIn == 1)
+        = endsIn
     %p Duration: #{course.duration}
